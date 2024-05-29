@@ -25,6 +25,8 @@ const coinCounter1 = (amount) => {
     const coinValue = coinValues[coin];
 
     if (amount >= coinValue) {
+      // Calculate the number of coins needed
+      const numCoins = Math.floor(amount / coinValue);
     }
   }
 
