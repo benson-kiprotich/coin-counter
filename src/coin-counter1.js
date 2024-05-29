@@ -22,6 +22,7 @@ const coinCounter1 = (amount) => {
 
   // Find the largest coin that is less than or equal to the amount
   for (const coin in coinValues) {
+    const coinValue = coinValues[coin];
   }
 
   return result;
