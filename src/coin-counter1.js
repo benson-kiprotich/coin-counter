@@ -16,4 +16,7 @@ const coinCounter1 = (amount) => {
       pennies: 0,
     };
   }
+
+  // Initialize an object to store the result
+  let result = {};
 };
