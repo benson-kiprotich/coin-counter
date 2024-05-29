@@ -27,6 +27,10 @@ const coinCounter1 = (amount) => {
     if (amount >= coinValue) {
       // Calculate the number of coins needed
       const numCoins = Math.floor(amount / coinValue);
+      // Recursively calculate change for the remaining amount after subtracting the current coin value
+      const remainingChange = calculateChangeRecursively(
+        amount - numCoins * coinValue
+      );
     }
   }
 
