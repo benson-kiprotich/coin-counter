@@ -19,4 +19,10 @@ const coinCounter1 = (amount) => {
 
   // Initialize an object to store the result
   let result = {};
+
+  // Find the largest coin that is less than or equal to the amount
+  for (const coin in coinValues) {
+  }
+
+  return result;
 };
