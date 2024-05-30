@@ -1,4 +1,4 @@
-function coinCounter1(num) {
+export function coinCounter1(num) {
   if (isNaN(num)) {
     return 'Please enter a number.';
   }
@@ -18,5 +18,3 @@ function coinCounter1(num) {
     return `${pennies} pennies ` + coinCounter1(0);
   }
 }
-
-module.exports = coinCounter1;
