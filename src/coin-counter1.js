@@ -1,38 +1,22 @@
-const coinCounter1 = (amount) => {
-  // Define coin values
-  const coinValues = {
-    quarters: 25,
-    dimes: 10,
-    nickels: 5,
-    pennies: 1,
-  };
-
-  // Base case: when amount becomes zero, return an object with all coins set to zero
-  if (amount === 0) {
-    return {
-      quarters: 0,
-      dimes: 0,
-      nickels: 0,
-      pennies: 0,
-    };
+function coinCounter1(num) {
+  if (isNaN(num)) {
+    return 'Please enter a number.';
   }
-
-  // Initialize an object to store the result
-  let result = {};
-
-  // Find the largest coin that is less than or equal to the amount
-  for (const coin in coinValues) {
-    const coinValue = coinValues[coin];
-
-    if (amount >= coinValue) {
-      // Calculate the number of coins needed
-      const numCoins = Math.floor(amount / coinValue);
-      // Recursively calculate change for the remaining amount after subtracting the current coin value
-      const remainingChange = coinCounter1(amount - numCoins * coinValue);
-      // Add the current coin to the result
-      result[coin] = numCoins + (remainingChange[coin] || 0);
-    }
+  if (num === 0) {
+    return '';
+  } else if (num / 25 >= 1) {
+    const quarters = Math.floor(num / 25);
+    return `${quarters} quarters ` + coinCounter1(num - quarters * 25);
+  } else if (num / 10 >= 1) {
+    const dimes = Math.floor(num / 10);
+    return `${dimes} dimes ` + coinCounter1(num - dimes * 10);
+  } else if (num / 5 >= 1) {
+    const nickels = Math.floor(num / 5);
+    return `${nickels} nickels ` + coinCounter1(num - nickels * 5);
+  } else {
+    const pennies = num;
+    return `${pennies} pennies ` + coinCounter1(0);
   }
+}
 
-  return result;
-};
+module.exports = coinCounter1;
