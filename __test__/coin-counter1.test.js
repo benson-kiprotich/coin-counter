@@ -1,4 +1,5 @@
-const coinCounter1 = require('./../src/coin-counter1');
+/* eslint-disable no-undef */
+import { coinCounter1 } from './../src/coin-counter1';
 
 describe('Coint Counter part 1', () => {
   test('Calculate change for $4.99', () => {
