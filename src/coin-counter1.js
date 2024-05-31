@@ -18,3 +18,13 @@ export function coinCounter1(num) {
     return `${pennies} pennies ` + coinCounter1(0);
   }
 }
+
+export function coinCounter2(num) {
+  const quarters = Math.floor(num / 25);
+  const dimes = Math.floor((num - quarters * 25) / 10);
+  const nickels = Math.floor((num - quarters * 25 - dimes * 10) / 5);
+  const pennies = Math.floor(num - quarters * 25 - dimes * 10 - nickels * 5);
+  return function show() {
+    return `${quarters} quarters ${dimes} dimes ${nickels} nickels ${pennies} pennies`;
+  };
+}
